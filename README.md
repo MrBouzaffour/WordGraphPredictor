@@ -31,9 +31,9 @@
   - `test_graph_builder.py`: Unit tests for the graph building functions.
   - `test_predictor.py`: Unit tests for the predictor functions.
 
-- **.gitignore**: Specifies files and directories to be ignored by Git.
-
-- **README.md**: The file you are currently reading, which provides an overview of the project.
+- **.gitignore**
+  
+- **README.md**
 
 - **requirements.txt**: Lists the Python packages required for the project.
 
