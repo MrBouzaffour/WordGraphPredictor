@@ -13,23 +13,29 @@
 - **Performance:** Handle large text data efficiently.
 - **Usability:** Simple and intuitive user interface.
   
-##  Directory Structure
-character-prediction/
-├── data/
-│   └── text_data.txt
-├── src/
-│   ├── __init__.py
-│   ├── preprocess.py
-│   ├── graph_builder.py
-│   ├── predictor.py
-│   └── app.py
-├── tests/
-│   ├── test_preprocess.py
-│   ├── test_graph_builder.py
-│   └── test_predictor.py
-├── .gitignore
-├── README.md
-└── requirements.txt
+
+### Directories and Files
+
+- **data/**
+  - `text_data.txt`: The text data used for training and testing the model.
+
+- **src/**
+  - `__init__.py`: Marks the directory as a Python package.
+  - `preprocess.py`: Contains functions for preprocessing the text data.
+  - `graph_builder.py`: Contains functions to build graphs or models from the data.
+  - `predictor.py`: Contains the character prediction logic.
+  - `app.py`: The main application script to run the project.
+
+- **tests/**
+  - `test_preprocess.py`: Unit tests for the preprocessing functions.
+  - `test_graph_builder.py`: Unit tests for the graph building functions.
+  - `test_predictor.py`: Unit tests for the predictor functions.
+
+- **.gitignore**: Specifies files and directories to be ignored by Git.
+
+- **README.md**: The file you are currently reading, which provides an overview of the project.
+
+- **requirements.txt**: Lists the Python packages required for the project.
 
 ### Data Collection and Preprocessing
 
