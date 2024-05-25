@@ -35,7 +35,7 @@
   
 - **README.md**
 
-- **requirements.txt**: Lists the Python packages required for the project.
+- **requirements.txt**
 
 ### Data Collection and Preprocessing
 
