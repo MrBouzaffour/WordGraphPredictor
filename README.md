@@ -13,23 +13,23 @@
 - **Performance:** Handle large text data efficiently.
 - **Usability:** Simple and intuitive user interface.
   
-##  Directory Structure ##
-   character-prediction/
-   ├── data/
-   │   └── text_data.txt
-   ├── src/
-   │   ├── __init__.py
-   │   ├── preprocess.py
-   │   ├── graph_builder.py
-   │   ├── predictor.py
-   │   └── app.py
-   ├── tests/
-   │   ├── test_preprocess.py
-   │   ├── test_graph_builder.py
-   │   └── test_predictor.py
-   ├── .gitignore
-   ├── README.md
-   └── requirements.txt
+##  Directory Structure
+character-prediction/
+├── data/
+│   └── text_data.txt
+├── src/
+│   ├── __init__.py
+│   ├── preprocess.py
+│   ├── graph_builder.py
+│   ├── predictor.py
+│   └── app.py
+├── tests/
+│   ├── test_preprocess.py
+│   ├── test_graph_builder.py
+│   └── test_predictor.py
+├── .gitignore
+├── README.md
+└── requirements.txt
 
 ### Data Collection and Preprocessing
 
