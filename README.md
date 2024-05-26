@@ -1,4 +1,4 @@
-# graph-based Prediction System
+# Graph-Based Prediction System
 
 ## Project Overview
 
