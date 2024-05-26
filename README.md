@@ -1,4 +1,4 @@
-# Character Prediction System
+# graph-based Prediction System
 
 ## Project Overview
 
