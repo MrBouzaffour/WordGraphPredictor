@@ -116,7 +116,7 @@
    ```
 ## Run the application:
    ```sh
-  python src/app.py
+  execution
   ```
 
 ## Usage
