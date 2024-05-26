@@ -16,26 +16,50 @@
 
 ### Directories and Files
 
-- **data/**
-  - `text_data.txt`: The text data used for training and testing the model.
+**/ `data/text_data.txt` /**
+- **Description:** Contains the text data used to build the prediction model. This is the input file that the application will read, preprocess, and use to create the graph of character.
 
-- **src/**
-  - `__init__.py`: Marks the directory as a Python package.
-  - `preprocess.py`: Contains functions for preprocessing the text data.
-  - `graph_builder.py`: Contains functions to build graphs or models from the data.
-  - `predictor.py`: Contains the character prediction logic.
-  - `app.py`: The main application script to run the project.
+**/ `src/main/java/com/prediction/App.java`/**
+- **Description:** The main entry point of the application. This file:
+  - Loads and preprocesses the text data.
+  - Builds the graph of character transitions.
+  - Provides a command-line interface for user interaction.
+  - Takes user input and uses the `Predictor` class to predict and display the next character.
 
-- **tests/**
-  - `test_preprocess.py`: Unit tests for the preprocessing functions.
-  - `test_graph_builder.py`: Unit tests for the graph building functions.
-  - `test_predictor.py`: Unit tests for the predictor functions.
+**/ `src/main/java/com/prediction/Graph.java` /**
+- **Description:** Represents the graph data structure. This file:
+  - Contains methods to add edges between characters and increment the weight of existing edges.
+  - Provides a method to get the most likely next character based on the highest edge weight.
 
-- **.gitignore**
-  
-- **README.md**
+**/ `src/main/java/com/prediction/Preprocessor.java`/**
+- **Description:** Handles text preprocessing. This file:
+  - Contains a method to read text data from a file.
+  - Converts the text to lowercase and removes non-alphabetic characters.
 
-- **requirements.txt**
+**/ `src/main/java/com/prediction/Predictor.java` /**
+- **Description:** Contains the prediction logic. This file:
+  - Uses the graph to predict the next character.
+  - Provides a method to get the next character based on the current character input by the user.
+
+**/`src/test/java/com/prediction/GraphTest.java`/**
+- **Description:** Contains unit tests for the `Graph` class to ensure that:
+  - Edges are added correctly.
+  - Weights are incremented properly.
+  - The most likely next character is returned based on the highest edge weight.
+
+**/ `src/test/java/com/prediction/PreprocessorTest.java`/**
+- **Description:** Contains unit tests for the `Preprocessor` class to ensure that:
+  - Text data is correctly read from a file.
+  - Text is converted to lowercase.
+  - Non-alphabetic characters are removed.
+
+**/ `src/test/java/com/prediction/PredictorTest.java`/**
+- **Description:** Contains unit tests for the `Predictor` class to ensure that:
+  - The prediction logic correctly identifies the next character based on the current character.
+  - The integration between `Predictor` and `Graph` works as expected.
+
+**/`.gitignore`/**
+**/`README.md`/**
 
 ### Data Collection and Preprocessing
 
