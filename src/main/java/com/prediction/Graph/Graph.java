@@ -1,7 +1,7 @@
 package com.prediction;
 
 /**
- * Represents the graph data structure.
+ * Graph data structure
  * This file contains methods to add edges between characters and increment the weight of existing edges.
  * It also provides a method to get the most likely next character based on the highest edge weight.
  */
