@@ -26,7 +26,7 @@
   - Provides a command-line interface for user interaction.
   - Takes user input and uses the `Predictor` class to predict and display the next character.
 
-**`src/main/java/com/prediction/Graph**
+**`src/main/java/com/prediction/Graph`**
   - **Description:** Represents the graph data structure. This directory:
   - Contains methods to add edges between characters and increment the weight of existing edges.
   - Provides a method to get the most likely next character based on the highest edge weight.
