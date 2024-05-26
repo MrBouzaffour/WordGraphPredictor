@@ -1,31 +1,24 @@
-package com.prediction;
+package main.java.com.prediction.Graph;
+import java.util.Collection;
 
-/**
- * Graph data structure
- * This file contains methods to add edges between characters and increment the weight of existing edges.
- * It also provides a method to get the most likely next character based on the highest edge weight.
- */
-import java.util.HashMap;
-import java.util.Map;
 
-public class Graph {
-    private Map<Character, Map<Character, Integer>> graph;
+public interface Graph<V> {
+    /*
+    * The Graph interface defines the essential operations for a graph data structure,
+    * supporting the addition of vertices and edges, retrieval of all vertices,
+    * and checking the type of the graph (directed or undirected)
+    **/
 
-    public Graph() {
-        this.graph = new HashMap<>();
-    }
+    // Adds an edge between the source and destination vertices with a specified weight, it Creates the vertices if they do not exist.
+    void addVertex(V data);
 
-    public void addEdge(char currentChar, char nextChar) {
-        this.graph.computeIfAbsent(currentChar, k -> new HashMap<>())
-                  .merge(nextChar, 1, Integer::sum);
-    }
+    // Adds a vertex to the graph with the specified data
+    void addEdge(V source, V destination, double weight);
 
-    public Character getNextChar(char currentChar) {
-            return null;
-        }
-        return this.graph.get(currentChar).entrySet().stream()
-                         .max(Map.Entry.comparingByValue())
-                         .map(Map.Entry::getKey)
-                         .orElse(null);
-    }
+    // Retrieves all vertices in the graph
+    Collection<Vertex<V>> getVertices();
+
+    // Returns the type of the graph (directed or undirected).
+    GraphType getGraphType();
 }
+
