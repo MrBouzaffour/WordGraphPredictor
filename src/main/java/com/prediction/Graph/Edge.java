@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * The Edge class represents an edge in a graph, connecting two vertices (source and destination) with an associated weight
  */
-public class Edge<V> implements Edge_interface<V> {
+public class Edge<V>{
 
     private final Vertex<V> source;     // The source vertex of the edge
     private final Vertex<V> destination; // The destination vertex of the edge
@@ -28,7 +28,6 @@ public class Edge<V> implements Edge_interface<V> {
      *
      * @return the source vertex of the edge
      */
-    @Override
     public Vertex<V> getSource() {
         return source;
     }
@@ -38,7 +37,6 @@ public class Edge<V> implements Edge_interface<V> {
      *
      * @return the destination vertex of the edge
      */
-    @Override
     public Vertex<V> getDestination() {
         return destination;
     }
@@ -48,7 +46,6 @@ public class Edge<V> implements Edge_interface<V> {
      *
      * @return the weight of the edge
      */
-    @Override
     public double getWeight() {
         return weight;
     }

@@ -7,7 +7,7 @@ import java.util.*;
 * and a list of edges connected to it.
 */
 
-public class Vertex<V> implements Vertex_interface<V> {
+public class Vertex<V>{
 
     private final V data;  // The data that will be stored in the vertex
     private final List<Edge<V>> edges;  // List of all the edges for this vertex
@@ -27,7 +27,6 @@ public class Vertex<V> implements Vertex_interface<V> {
      *
      * @return the data stored in this vertex
      */
-    @Override
     public V getData() {
         return data;
     }
@@ -37,7 +36,6 @@ public class Vertex<V> implements Vertex_interface<V> {
      *
      * @return a list of edges connected to this vertex
      */
-    @Override
     public List<Edge<V>> getEdges() {
         return edges;
     }
@@ -47,7 +45,6 @@ public class Vertex<V> implements Vertex_interface<V> {
      *
      * @param edge the edge to be added
      */
-    @Override
     public void addEdge(Edge<V> edge) {
         edges.add(edge);
     }

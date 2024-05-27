@@ -6,7 +6,7 @@ import java.util.*;
  * The Graph class represents a graph data structure containing vertices and edges.
  * It provides methods to add vertices and edges, and to retrieve the collection of vertices.
  * */
-public class Graph<V> implements Graph_interface<V> {
+public class Graph<V>{
 
     private final Map<V, Vertex<V>> vertices;  // Map to store vertices by their data
 
@@ -22,7 +22,6 @@ public class Graph<V> implements Graph_interface<V> {
      *
      * @param data the data to be stored in the vertex
      */
-    @Override
     public void addVertex(V data) {
         vertices.putIfAbsent(data, new Vertex<>(data));
     }
@@ -35,7 +34,6 @@ public class Graph<V> implements Graph_interface<V> {
      * @param destination the destination vertex data
      * @param weight the weight of the edge
      */
-    @Override
     public void addEdge(V source, V destination, double weight) {
         if (!vertices.containsKey(source)) addVertex(source);
         if (!vertices.containsKey(destination)) addVertex(destination);
@@ -51,7 +49,6 @@ public class Graph<V> implements Graph_interface<V> {
      *
      * @return a collection of vertices
      */
-    @Override
     public Collection<Vertex<V>> getVertices() {
         return vertices.values();
     }
