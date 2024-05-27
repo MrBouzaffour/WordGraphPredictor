@@ -1,0 +1,2 @@
+Hello, World! This is a sample text to test the preprocessing function.
+It includes punctuation marks, UPPERCASE letters, and numbers 12345.
