@@ -5,14 +5,16 @@ import main.java.com.prediction.Graph.Graph;
 import main.java.com.prediction.Graph.Vertex;
 
 /**
- * Contains unit tests for the Graph class to ensure that:
- * - Edges are added correctly.
- * - Weights are incremented properly.
- * - The most likely next character is returned based on the highest edge weight.
- */
+ *  Contains a regression test for the Graph class, we are testing :
+ * - creating of a graph
+ * - addition of edges and vertices
+ * - connection of edges and the weight
+ * */
+
 public class GraphTest {
+
     public static void main(String[] args) {
-        // Create a directed graph
+        // Create a graph
         Graph<String> graph = new Graph<>();
 
         // Test adding vertices
@@ -33,6 +35,7 @@ public class GraphTest {
         }
 
         // Check edges
+
         boolean edgeTestPassed = true;
         for (Vertex<String> vertex : graph.getVertices()) {
             if (vertex.getData().equals("A")) {
@@ -74,7 +77,6 @@ public class GraphTest {
         } else {
             System.out.println("Test Failed: Incorrect edge connections or weights.");
         }
-
 
     }
 }
