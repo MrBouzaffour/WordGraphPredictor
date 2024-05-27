@@ -6,7 +6,11 @@ package com.prediction;
  * provides a command-line interface for user interaction, and takes user input to predict the next character.
  */
 public class App {
-    public static void main(String[] args) {
-        System.out.println("Character Prediction System");
+    //public static void main(String[] args) {
+    //    System.out.println("Character Prediction System");
+    //}
+    public App()
+    {
+        return;
     }
 }

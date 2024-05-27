@@ -6,13 +6,11 @@ package com.prediction;
  * based on the current character input by the user.
  */
 public class Predictor {
-    private Graph graph;
+    //private Graph graph;
 
-    public Predictor(Graph graph) {
-        this.graph = graph;
+    public Predictor() {
+        return;
     }
 
-    public Character predictNextChar(char currentChar) {
-        return this.graph.getNextChar(currentChar);
-    }
+
 }
