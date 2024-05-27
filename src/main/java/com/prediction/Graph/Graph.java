@@ -1,7 +1,13 @@
 package main.java.com.prediction.Graph;
 import java.util.*;
 
+
+/**
+ * The Graph class represents a graph data structure containing vertices and edges.
+ * It provides methods to add vertices and edges, and to retrieve the collection of vertices.
+ * */
 public class Graph<V> implements Graph_interface<V> {
+
     private final Map<V, Vertex<V>> vertices;  // Map to store vertices by their data
 
     /**
