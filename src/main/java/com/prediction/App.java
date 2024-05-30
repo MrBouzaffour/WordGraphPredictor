@@ -27,6 +27,7 @@ public class App {
                 String nextWord = preprocessedWords.get(i + 1);
                 graph.addEdge(currentWord, nextWord, 1); // Increment weight by 1 for each transition
             }
+
             // Initialize the predictor with the built graph
             Predictor predictor = new Predictor(graph);
 

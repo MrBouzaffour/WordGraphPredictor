@@ -4,7 +4,6 @@ import com.prediction.Graph.Graph;
 import com.prediction.Graph.Vertex;
 import com.prediction.Graph.Edge;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,8 +35,8 @@ public class Predictor {
 
         Map<String, Double> candidateWords = new HashMap<>();
 
-        // Iterate through all words in the sequence
-        for (int i = 0; i < words.length; i++) {
+        // Iterate through the last few words in the sequence
+        for (int i = Math.max(0, words.length - 2); i < words.length; i++) {
             String word = words[i];
 
             Vertex<String> currentVertex = null;
@@ -49,13 +48,13 @@ public class Predictor {
             }
 
             if (currentVertex == null) {
-                continue;  // Move to the next word in the sequence if not found
+                continue;
             }
 
             List<Edge<String>> edges = currentVertex.getEdges();
             for (Edge<String> edge : edges) {
                 String nextWord = edge.getDestination().getData();
-                if (!nextWord.equals(word)) {
+                if (!nextWord.equals(lastWord)) {
                     candidateWords.put(nextWord, candidateWords.getOrDefault(nextWord, 0.0) + edge.getWeight());
                 }
             }
@@ -72,37 +71,5 @@ public class Predictor {
         }
 
         return predictedWord;
-    }
-
-    public static void main(String[] args) {
-        try {
-            // Example usage of the Predictor class
-            Graph<String> graph = new Graph<>();
-
-            // Sample text to build the graph
-            List<String> words = Preprocessor.preprocessText("data/text_data.txt");
-
-            // Building the graph with the sample text
-            for (int i = 0; i < words.size() - 1; i++) {
-                String currentWord = words.get(i);
-                String nextWord = words.get(i + 1);
-                graph.addEdge(currentWord, nextWord, 1); // Increment weight by 1 for each transition
-            }
-
-            // Create a Predictor instance with the built graph
-            Predictor predictor = new Predictor(graph);
-
-            // Predict the next word after a sequence of words
-            String currentWords = "wise old";
-            String predictedWord = predictor.predictNextWord(currentWords);
-
-            if (predictedWord != null) {
-                System.out.println("The predicted next word after '" + currentWords + "' is: " + predictedWord);
-            } else {
-                System.out.println("No prediction can be made for the words: " + currentWords);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
