@@ -1,13 +1,14 @@
-package main.java.com.prediction.Graph;
-import java.util.*;
+package com.prediction.Graph;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The Graph class represents a graph data structure containing vertices and edges.
  * It provides methods to add vertices and edges, and to retrieve the collection of vertices.
- * */
-public class Graph<V>{
-
+ */
+public class Graph<V> {
     private final Map<V, Vertex<V>> vertices;  // Map to store vertices by their data
 
     /**
@@ -41,7 +42,18 @@ public class Graph<V>{
         Vertex<V> sourceVertex = vertices.get(source);
         Vertex<V> destVertex = vertices.get(destination);
 
-        sourceVertex.addEdge(new Edge<>(sourceVertex, destVertex, weight));
+        boolean edgeExists = false;
+        for (Edge<V> edge : sourceVertex.getEdges()) {
+            if (edge.getDestination().equals(destVertex)) {
+                edge.incrementWeight(weight);
+                edgeExists = true;
+                break;
+            }
+        }
+
+        if (!edgeExists) {
+            sourceVertex.addEdge(new Edge<>(sourceVertex, destVertex, weight));
+        }
     }
 
     /**
@@ -52,5 +64,4 @@ public class Graph<V>{
     public Collection<Vertex<V>> getVertices() {
         return vertices.values();
     }
-
 }

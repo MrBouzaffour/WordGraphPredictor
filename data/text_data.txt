@@ -1,2 +1,4 @@
-Hello, World! This is a sample text to test the preprocessing function.
-It includes punctuation marks, UPPERCASE letters, and numbers 12345.
+my work is good for the job i have done
+my work is the best
+my work is an important feacher
+my work represent love

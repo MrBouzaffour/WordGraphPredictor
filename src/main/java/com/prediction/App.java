@@ -1,16 +1,15 @@
 package com.prediction;
 
-import main.java.com.prediction.Graph.Graph;
-import main.java.com.prediction.Preprocessor;
-import main.java.com.prediction.Predictor;
+import com.prediction.Graph.*;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
  * The main entry point of the application.
- * This file loads and preprocesses the text data, builds the graph of character transitions,
- * provides a command-line interface for user interaction, and takes user input to predict the next character.
+ * This file loads and preprocesses the text data, builds the graph of word transitions,
+ * provides a command-line interface for user interaction, and takes user input to predict the next word.
  */
 public class App {
     public static void main(String[] args) {
@@ -19,16 +18,15 @@ public class App {
 
         try {
             // Preprocess the text data
-            String preprocessedText = Preprocessor.preprocessText(filePath);
+            List<String> preprocessedWords = Preprocessor.preprocessText(filePath);
 
             // Create a graph and build it from the preprocessed text
-            Graph<Character> graph = new Graph<>();
-            for (int i = 0; i < preprocessedText.length() - 1; i++) {
-                char currentChar = preprocessedText.charAt(i);
-                char nextChar = preprocessedText.charAt(i + 1);
-                graph.addEdge(currentChar, nextChar, 1); // Using weight 1 for simplicity
+            Graph<String> graph = new Graph<>();
+            for (int i = 0; i < preprocessedWords.size() - 1; i++) {
+                String currentWord = preprocessedWords.get(i);
+                String nextWord = preprocessedWords.get(i + 1);
+                graph.addEdge(currentWord, nextWord, 1); // Increment weight by 1 for each transition
             }
-
             // Initialize the predictor with the built graph
             Predictor predictor = new Predictor(graph);
 
@@ -36,11 +34,12 @@ public class App {
             Scanner scanner = new Scanner(System.in);
 
             // Command-line interface for user interaction
-            System.out.println("Character Prediction System");
-            System.out.println("Type a character to predict the next character, or type 'exit' to quit.");
+            System.out.println("Word Prediction System \n");
+            System.out.println("Training completed.");
+            System.out.println("Type a word to predict the next word, or type 'exit' to quit.\n");
 
             while (true) {
-                System.out.print("Enter a character: ");
+                System.out.print("Enter a word: ");
                 String input = scanner.nextLine();
 
                 // Exit the loop if the user types "exit"
@@ -48,21 +47,15 @@ public class App {
                     break;
                 }
 
-                // Validate input
-                if (input.length() != 1 || !Character.isLetter(input.charAt(0))) {
-                    System.out.println("Please enter a single alphabetic character.");
-                    continue;
-                }
-
-                // Predict the next character
-                char currentChar = input.charAt(0);
-                Character predictedChar = predictor.predictNextChar(currentChar);
+                // Predict the next word
+                String currentWord = input.toLowerCase();
+                String predictedWord = predictor.predictNextWord(currentWord);
 
                 // Display the prediction
-                if (predictedChar != null) {
-                    System.out.println("The predicted next character after '" + currentChar + "' is: " + predictedChar);
+                if (predictedWord != null) {
+                    System.out.println("The predicted next word after '" + currentWord + "' is: " + predictedWord);
                 } else {
-                    System.out.println("No prediction can be made for the character: " + currentChar);
+                    System.out.println("No prediction can be made for the word: " + currentWord);
                 }
             }
 

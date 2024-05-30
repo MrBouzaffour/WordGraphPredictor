@@ -1,4 +1,4 @@
-package main.java.com.prediction.Graph;
+package com.prediction.Graph;
 import java.util.*;
 
 /**
@@ -8,7 +8,7 @@ public class Edge<V>{
 
     private final Vertex<V> source;     // The source vertex of the edge
     private final Vertex<V> destination; // The destination vertex of the edge
-    private final double weight;        // The weight of the edge
+    private double weight;        // The weight of the edge
 
     /**
      * Constructs a new edge with the specified source, destination, and weight.
@@ -48,5 +48,9 @@ public class Edge<V>{
      */
     public double getWeight() {
         return weight;
+    }
+
+    public void incrementWeight(double weight) {
+        this.weight++;
     }
 }

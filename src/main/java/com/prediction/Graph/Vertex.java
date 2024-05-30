@@ -1,4 +1,4 @@
-package main.java.com.prediction.Graph;
+package com.prediction.Graph;
 import java.util.*;
 
 
