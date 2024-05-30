@@ -106,6 +106,23 @@
 ## Usage
   Run the application and input a sequence of words to get the predicted next word.
   Type exit to quit the application.
+  ```sh
+  Word Prediction System
 
+  Training completed.
+  Type a word to predict the next word, or type 'exit' to quit.
+
+  Enter a word: today i
+  The predicted next word after 'today i' is: will
+  Enter a word: today i will
+  The predicted next word after 'today i will' is: give
+  Enter a word: today i gave
+  The predicted next word after 'today i gave' is: you
+  Enter a word: because i didn't
+  The predicted next word after 'because i didn't' is: understand
+  Enter a word: take the
+  The predicted next word after 'take the' is: project
+  Enter a word: exit
+  ```
 ## Contributing
   Feel free to fork this project, submit issues, and make pull requests.
