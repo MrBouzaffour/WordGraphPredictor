@@ -1,2 +1,0 @@
-hello world this is a sample text to test the preprocessing function
-it includes punctuation marks uppercase letters and numbers
