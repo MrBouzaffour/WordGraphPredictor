@@ -1,4 +1,1 @@
-my work is good for the job i have done
-my work is the best
-my work is an important feacher
-my work represent love
+Data to train the model ...
