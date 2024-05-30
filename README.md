@@ -17,6 +17,8 @@
 
 **`data/text_data.txt`**
   - **Description:** Contains the text data used to build the prediction model. This is the input file that the application will read, preprocess, and use to create the graph of word transitions.
+  - **Note:** I didnt provide any data in this file. You need to provide your own text data for training.
+
 
 **`src/main/java/com/prediction/App.java`**
   - **Description:** The main entry point of the application. This file:
